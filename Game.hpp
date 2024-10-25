@@ -51,7 +51,7 @@ class Game{
                     std::cout << "You win!" << std::endl;
                     return true;
                 case LOSE:
-                    std::cout << "You lose!" << std::endl;
+                    std::cout << "You lose :(" << std::endl;
                     return true;
                 case PLAYING:
                     std::cout << "Game on" << std::endl;
