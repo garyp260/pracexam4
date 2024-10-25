@@ -35,6 +35,6 @@ class Pit : public Interactable{
         }
 
         InteractableType getType(){
-            return PIT;
+            return this->type;
         }
 };

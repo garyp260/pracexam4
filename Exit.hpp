@@ -31,6 +31,6 @@ class Exit : public Interactable{
         }
 
         InteractableType getType(){
-            return EXIT;
+            return this->type;
         }
 };
