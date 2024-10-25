@@ -71,8 +71,15 @@ class Game{
                 for (int i = 0; i < pits.size(); ++i) {
                     Pit* pit = pits[i];
 
+                    int x1 = std::get<0>(player->getCoordinates());
+                    int y1 = std::get<1>(player->getCoordinates());
+                    int x2 = std::get<0>(pit->getCoordinates());
+                    int y2 = std::get<1>(pit->getCoordinates());
 
-                    if (Helper::absoluteSquaredDistance(player->getCoordinates(), pit->getCoordinates()) == 0) {
+                    double result = pow((abs(x2 - x1) + abs(y2 - y1)), 2);
+
+
+                    if (result == 0) {
 
                         bool lost = pit->interact(player);
                         if (lost) {
@@ -82,8 +89,13 @@ class Game{
                     }
                 }
 
+                int x1 = std::get<0>(player->getCoordinates());
+                int y1 = std::get<1>(player->getCoordinates());
+                int x2 = std::get<0>(exit->getCoordinates());
+                int y2 = std::get<1>(exit->getCoordinates());
 
-                if (Helper::absoluteSquaredDistance(player->getCoordinates(), exit->getCoordinates()) == 0) {
+                double result = pow((abs(x2 - x1) + abs(y2 - y1)), 2);
+                if (result == 0) {
                     state = WIN;
                 }
             }
